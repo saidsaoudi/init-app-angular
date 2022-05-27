@@ -1,0 +1,46 @@
+@import './vars.scss';
+/**************************************************************************************
+Background color button
+***************************************************************************************/
+
+button.bg-btn-green {
+    background: transparent linear-gradient(180deg, $green-color-3 0%, $black-color-2 100%) 0% 0% no-repeat padding-box;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button.bg-btn-green  mat-icon {
+    color: #ffffff;
+    /* UI Properties */
+    opacity: 1;
+}
+
+img.avatar {
+    width: 51px;
+    height: 51px;
+}
+
+.header-title > h1 {
+    text-align: left;
+    font: normal normal 600 30px/41px Noto Sans;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke:  #138742 ;
+}
+
+// // Theme for notifications / snackbar
+// $notifications-theme: (
+//   default: #fff,
+//   info: mat-color(mat-palette($mat-blue), 400),
+//   success: mat-color(mat-palette($mat-green), 400),
+//   warning: mat-color(mat-palette($mat-yellow), 400),
+//   error: mat-color(mat-palette($mat-red), 400),
+// );
+// .header-title > mat-icon {
+//     width: 25px;
+//     height: 28px;
+// }

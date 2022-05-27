@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./assets/css/theme-1.scss";
+@import "./custom-theme.scss";
+@import "./assets/css/toast.scss-theme.scss";
+@import '~@angular/material/theming';
+@include mat-core();
+@import "./assets/css/custom-component-themes.scss";
+
+@include custom-components-theme($notifications-theme);
+
+html,
+body {
+  height: 100%;
+}
+
+:host ::ng-deep mat-spinner .mat-progress-spinner circle, .mat-spinner circle {   
+  stroke:  #138742 ;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+}

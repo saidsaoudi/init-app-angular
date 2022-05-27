@@ -1,0 +1,80 @@
+<div class="mt-10">
+  <ng-container *ngIf="!loading">
+    <div
+      class="flex flex-row justify-between ml-5 mr-5 pl-7 pr-7 bg-white mb-5 shadow-[0px_3px_20px_#00000029] rounded-[18px] h-[75px]"
+      *ngFor="let livreurs of livreurs$ | async"
+    >
+      <div class="flex place-items-center align-middle items-center width-info">
+        <div class="pl-4 place-items-center items-center text-center">
+          <mat-icon class="text-[19px] text-[#138742]">person</mat-icon>
+          <p class="text-[#b5b5b5] text-[10px] leading-[1rem]">
+            {{ livreurs.code }}
+          </p>
+          <p class="leading-[0rem]">
+            <mat-icon class="text-[10px] w-auto h-auto">star_border</mat-icon>
+            <mat-icon class="text-[10px] w-auto h-auto">star_border</mat-icon>
+            <mat-icon class="text-[10px] w-auto h-auto">star_border</mat-icon>
+            <mat-icon class="text-[10px] w-auto h-auto">star_border</mat-icon>
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center width-content">
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="icon ml-4">
+          <mat-icon class="text-[19px] text-[#138742]">info</mat-icon>
+        </div>
+        <div class="pl-3">
+          <p class="text-[#b5b5b5] text-[10px]">Nom et prénom</p>
+          <p class="text-[12px] text-[#000000]">{{ livreurs.first_name }}</p>
+        </div>
+      </div>
+      <div class="flex items-center width-content">
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="icon ml-4">
+          <mat-icon class="text-[19px] text-[#138742]">local_shipping</mat-icon>
+        </div>
+        <div class="pl-3">
+          <p class="text-[10px] text-[#b5b5b5]">Type</p>
+          <p class="text-[12px] text-[#000000]">Camion</p>
+        </div>
+      </div>
+      <div class="flex items-center width-content">
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="icon ml-4">
+          <mat-icon class="text-[19px] text-[#138742]">phone</mat-icon>
+        </div>
+        <div class="pl-3">
+          <p class="text-[10px] text-[#b5b5b5]">Téléphone</p>
+          <p class="text-[12px] text-[#000000]">{{ livreurs.phone }}</p>
+        </div>
+      </div>
+      <div class="flex items-center width-content">
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="icon ml-4">
+          <mat-icon class="text-[19px] text-[#138742]"
+            >power_settings_new</mat-icon
+          >
+        </div>
+        <div class="pl-3">
+          <p class="text-[10px] text-[#b5b5b5]">Status</p>
+          <p class="text-[12px] text-[#000000]">Disponible</p>
+        </div>
+      </div>
+      <div class="flex items-center pl-4 justify-end">
+        <mat-divider [vertical]="true"></mat-divider>
+        <!-- <mat-icon class="cursor-pointer ml-4 text-[19px] text-[#138742]"
+            >menu</mat-icon
+          > -->
+        <app-menu-popover></app-menu-popover>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="loading">
+    <div
+      class="flex h-screen h-full justify-center items-center spinner-container"
+    >
+      <mat-spinner class="m-auto"></mat-spinner>
+    </div>
+  </ng-container>
+</div>

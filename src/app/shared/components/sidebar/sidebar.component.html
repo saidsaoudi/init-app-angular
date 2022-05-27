@@ -1,0 +1,72 @@
+<!-- <mat-nav-list [ngClass]="callapsed ? 'callapsed-sidenav' : 'side-navnar'"> -->
+<mat-nav-list
+  [ngClass]="!sideNavState ? 'callapsed-sidenav' : 'side-navnar'"
+  [@onSideNavChange]="sideNavState ? 'open' : 'close'"
+>
+  <div class="profile-card mb-6">
+    <img *ngIf="sideNavState" src="../../../../assets/img/logo-sdtm.png" />
+  </div>
+  <div></div>
+  <ng-container *ngFor="let menu of menuList">
+    <ng-container
+      *ngIf="menu.isMenu"
+      [ngTemplateOutlet]="menu.children.length > 0 ? childMenu : parentMenu"
+      [ngTemplateOutletContext]="{ menu: menu }"
+    >
+    </ng-container>
+  </ng-container>
+  <mat-list-item
+    class="list-item-menu"
+    (click)="logout()"
+    routerLinkActive="active"
+  >
+    <mat-icon class="icon-menu btn-icon" svgIcon="signout"></mat-icon>
+    <p [@animateText]="linkText ? 'show' : 'hide'">Déconnexion</p>
+  </mat-list-item>
+  <span class="spacer"></span>
+
+  <footer
+    class="absolute bottom-0 footer-toggle fixed justify-end w-100 bg-[#e5e5e7]"
+    fxLayout="row"
+    fxLayoutAlign="end center"
+    style="padding: 0px 10px"
+  >
+    <button mat-icon-button (click)="onSinenavToggle()">
+      <mat-icon *ngIf="sideNavState">arrow_left</mat-icon>
+      <mat-icon *ngIf="!sideNavState">arrow_right</mat-icon>
+    </button>
+  </footer>
+</mat-nav-list>
+<ng-template #parentMenu let-menu="menu">
+  <mat-list-item
+    class="list-item-menu"
+    [routerLink]="menu.routeName"
+    routerLinkActive="active"
+  >
+    <mat-icon class="icon-menu btn-icon" [svgIcon]="menu.icon"></mat-icon>
+    <p [@animateText]="linkText ? 'show' : 'hide'">{{ menu.sidebarName }}</p>
+  </mat-list-item>
+</ng-template>
+
+<ng-template #childMenu let-menu="menu">
+  <mat-expansion-panel [class.mat-elevation-z0]="true">
+    <mat-expansion-panel-header>
+      <mat-icon class="icon-menu" [svgIcon]="menu.icon"></mat-icon>
+      {{ menu.sidebarName }}
+    </mat-expansion-panel-header>
+    <mat-nav-list>
+      <mat-list-item
+        [routerLink]="submenu.routeName"
+        *ngFor="let submenu of menu.children"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon
+          class="icon-menu btn-icon"
+          [svgIcon]="submenu.icon"
+        ></mat-icon>
+        {{ submenu.sidebarName }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-expansion-panel>
+</ng-template>

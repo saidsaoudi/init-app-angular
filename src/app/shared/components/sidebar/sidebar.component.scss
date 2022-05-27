@@ -1,0 +1,110 @@
+a {
+  cursor: pointer;
+}
+.mat-nav-list .mat-list-item {
+  width: 232px;
+  margin: 5px auto;
+}
+::ng-deep .list-item-menu .mat-list-item-content {
+  padding: 0px !important;
+}
+::ng-deep .list-item-menu p {
+  padding-left: 10px;
+}
+.icon-menu {
+  width: 51px;
+  height: 40px;
+  padding: 10px 10px 10px 15px;
+}
+
+.list-item-menu:hover,
+.list-item-menu:focus,
+mat-list-item.active {
+  background: transparent
+    linear-gradient(180deg, #616161 0%, var(--unnamed-color-000000) 100%) 0% 0%
+    no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #616161 0%, #000000 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 24px;
+  color: #fff;
+  .icon-menu {
+    background: transparent linear-gradient(0deg, #05402b 0%, #04893e 100%) 0%
+      0% no-repeat padding-box;
+    border-radius: 24px 0px 0px 24px;
+  }
+}
+
+::ng-deep .mat-list-base .mat-list-item {
+  height: 40px !important;
+}
+.callapsed-sidenav {
+  width: auto !important;
+}
+// @media only screen and (max-width: 1124px)
+.callapsed-sidenav > .mat-list-item {
+  width: auto !important;
+  margin: 15px auto;
+  padding-right: 8px !important;
+  padding-left: 8px !important;
+}
+.callapsed-sidenav > .list-item-menu:hover,
+.callapsed-sidenav > .list-item-menu:focus,
+.callapsed-sidenav > mat-list-item.active {
+  background: #fff !important;
+}
+.callapsed-sidenav > .icon-menu {
+  margin-left: 15px !important ;
+  margin-right: 15px !important;
+}
+
+// .list-item-menu:hover,
+// .list-item-menu:focus,
+// mat-list-item.active {
+//   .icon-menu {
+//     background: transparent linear-gradient(0deg, #05402b 0%, #04893e 100%) 0%
+//       0% no-repeat padding-box;
+//     border-radius: 24px 0px 0px 24px;
+//   }
+// }
+
+::ng-deep mat-nav-list {
+  height: 100vh !important;
+}
+
+.profile-card img {
+  width: 178px;
+  margin: auto;
+  padding: 20px 0px 20px 0px;
+}
+
+.side-navnar {
+  width: 276px;
+}
+
+::ng-deep .icon-menu {
+  &:hover {
+    path {
+      fill: rgba(#fff, 1);
+    }
+  }
+}
+
+::ng-deep mat-list-item.active,
+::ng-deep .list-item-menu:focus,
+::ng-deep .list-item-menu:hover {
+  path {
+    fill: rgba(#fff, 1);
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+.footer-toggle {
+  // display: flex;
+  flex: 0 0 3rem;
+  // justify-content: flex-end;
+  width: 100%;
+  // background-color: #e5e5e7;
+}

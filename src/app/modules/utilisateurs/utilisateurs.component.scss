@@ -1,0 +1,11 @@
+.utilisateurs {
+  .left-and-right::after {
+    content: "";
+    position: absolute;
+    background-color: #d5d5d5;
+    width: 1px;
+    height: 46px;
+    bottom: 14px;
+    right: 10px;
+  }
+}

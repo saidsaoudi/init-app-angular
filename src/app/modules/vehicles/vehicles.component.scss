@@ -1,0 +1,20 @@
+::ng-deep mat-divider {
+    height: 70%;
+    // margin: 5px;
+}
+
+.width-info {
+    width: 10%
+}
+
+.width-content {
+    width: 25%
+}
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke:  #138742 ;
+}
+
+.spinner-container {
+    padding: 15%;
+}
